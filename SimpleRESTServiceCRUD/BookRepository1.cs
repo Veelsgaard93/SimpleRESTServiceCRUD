@@ -5,7 +5,7 @@ using System.Web;
 
 namespace SimpleRESTServiceCRUD
 {
-    public class BookRepository1 : IBook
+    public class BookRepository1 : IBookRepository
     {
         public List<Book> GetAllBooks()
         {
@@ -22,7 +22,7 @@ namespace SimpleRESTServiceCRUD
             throw new NotImplementedException();
         }
 
-        public bool DeleteABook(int id)
+        public bool DeleteBook(int id)
         {
             throw new NotImplementedException();
         }
