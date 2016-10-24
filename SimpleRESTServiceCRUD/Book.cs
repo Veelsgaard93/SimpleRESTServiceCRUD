@@ -12,7 +12,7 @@ namespace SimpleRESTServiceCRUD
     public class Book
     {
         [DataMember]
-        public int BookID { get; set; }
+        public int BookId { get; set; }
         [DataMember]
         public string Title { get; set; }
         [DataMember]

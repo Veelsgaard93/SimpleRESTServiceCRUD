@@ -7,24 +7,42 @@ namespace SimpleRESTServiceCRUD
 {
     public class BookRepository1 : IBookRepository
     {
+        private List<Book> books = new List<Book>();
+        private int counter = 1;
+
+        public BookRepository1()
+        {
+            AddNewBook(new Book
+            {
+                Title = "Thinking in C#", ISBN = "65674523432423" });
+           AddNewBook(new Book { Title = "Thinking in Java", ISBN = "34223434543423" });
+            AddNewBook(new Book { Title = "Beginning WCF", ISBN = "35343532423" });
+        }
+
         public List<Book> GetAllBooks()
         {
-            throw new NotImplementedException();
+            return books;
         }
 
         public Book GetBookById(int id)
         {
-            throw new NotImplementedException();
+            return books.Find(b => b.BookId == id);
         }
 
         public Book AddNewBook(Book item)
         {
-            throw new NotImplementedException();
+            if (item == null)
+                throw new ArgumentNullException("item"); item.BookId = counter++;
+            books.Add(item);
+            return item;
         }
 
         public bool DeleteBook(int id)
         {
-            throw new NotImplementedException();
+            int idx = books.FindIndex(b => b.BookId == id);
+            if (idx == -1)
+                return false; books.RemoveAll(b => b.BookId == id);
+            return true;
         }
 
         public bool UpdateABook(Book item)
