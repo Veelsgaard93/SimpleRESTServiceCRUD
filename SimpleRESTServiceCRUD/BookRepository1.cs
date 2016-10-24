@@ -12,10 +12,8 @@ namespace SimpleRESTServiceCRUD
 
         public BookRepository1()
         {
-            AddNewBook(new Book
-            {
-                Title = "Thinking in C#", ISBN = "65674523432423" });
-           AddNewBook(new Book { Title = "Thinking in Java", ISBN = "34223434543423" });
+            AddNewBook(new Book { Title = "Thinking in C#", ISBN = "65674523432423" });
+            AddNewBook(new Book { Title = "Thinking in Java", ISBN = "34223434543423" });
             AddNewBook(new Book { Title = "Beginning WCF", ISBN = "35343532423" });
         }
 
