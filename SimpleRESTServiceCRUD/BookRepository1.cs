@@ -47,7 +47,13 @@ namespace SimpleRESTServiceCRUD
 
         public bool UpdateABook(Book item)
         {
-            throw new NotImplementedException();
+            if (item == null)
+                throw new ArgumentNullException("item");
+            int idx = books.FindIndex(b => b.BookId == item.BookId);
+            if (idx == -1)
+                return false; books.RemoveAt(idx);
+            books.Add(item);
+            return true;
         }
     }
 }
